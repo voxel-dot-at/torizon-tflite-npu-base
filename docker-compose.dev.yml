@@ -1,0 +1,15 @@
+services:
+  tflite-dev:
+    image: docker.io/<DOCKERHUB_USERNAME>/tflite-npu-base:1.0.0
+    environment:
+      - ACCEPT_FSL_EULA=1
+      - PYTHONUNBUFFERED=1
+      - TFLITE_VX_DELEGATE=/usr/lib/libvx_delegate.so
+    volumes:
+      - ./workspace:/workspace
+      - /dev:/dev
+      - /run/udev:/run/udev
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    command: ["sleep", "infinity"]

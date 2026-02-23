@@ -1,0 +1,17 @@
+services:
+  tflite-npu-base:
+    image: docker.io/euvoxel/tflite-npu-base:latest
+    environment:
+      - ACCEPT_FSL_EULA=1
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    command:
+      - python3
+      - -c
+      - |
+        import os
+        import pathlib
+        import tflite_runtime.interpreter as t
+        p = pathlib.Path(os.environ.get('TFLITE_VX_DELEGATE','/usr/lib/libvx_delegate.so'))
+        print('tflite_runtime: OK')
+        print(f'vx_delegate_path={p} exists={p.exists()}')

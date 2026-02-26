@@ -1,6 +1,6 @@
 services:
   tflite-npu-base:
-    image: docker.io/euvoxel/tflite-npu-base:latest
+    image: docker.io/voxeldotat/tflite-npu-base:latest
     environment:
       - ACCEPT_FSL_EULA=1
       - PYTHONUNBUFFERED=1

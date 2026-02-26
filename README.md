@@ -53,10 +53,10 @@ docker run --rm <DOCKERHUB_USERNAME>/tflite-npu-base:<tag> \
 
 ## Verify with prebuilt image
 ```bash
-docker run --rm euvoxel/tflite-npu-base:latest \
+docker run --rm voxeldotat/tflite-npu-base:latest \
   python3 -c "import tflite_runtime.interpreter as t; print('tflite_runtime OK')"
 
-docker run --rm euvoxel/tflite-npu-base:latest \
+docker run --rm voxeldotat/tflite-npu-base:latest \
   sh -c "ls -l /usr/lib/libvx_delegate.so && ldd /usr/lib/libvx_delegate.so | head"
 ```
 
